@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 
 public class MainApp extends Application {
     public void start(Stage primaryStage) throws Exception {
-        String fxmlFile = "/MainPage.fxml";
+        String fxmlFile = "/Welcome.fxml";
         FXMLLoader loader = new FXMLLoader();
         Parent root =   loader.load(getClass().getResourceAsStream(fxmlFile));
         primaryStage.setTitle("JavaFX and Maven");
