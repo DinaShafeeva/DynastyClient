@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.effect.Light.Distant?>
 <?import javafx.scene.effect.Lighting?>
 <?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.dynasty.client.Welcome">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ru.dynasty.client.Welcome">
    <children>
-      <Button layoutX="268.0" layoutY="235.0" mnemonicParsing="false" onAction="#clickLoginButton" text="Log in"/>
+      <Button fx:id="login" layoutX="268.0" layoutY="235.0" mnemonicParsing="false" onAction="#clickLoginButton" text="Log in"/>
       <Text fontSmoothingType="LCD" layoutX="212.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to the Dynasty">
          <effect>
             <Reflection bottomOpacity="0.01" fraction="0.8" topOpacity="0.36" />
          </effect>
       </Text>
-      <Button alignment="CENTER_RIGHT" layoutX="335.0" layoutY="235.0" mnemonicParsing="false" onAction="#clickRegistrationButton" text="Registration" />
+      <Button fx:id="registration" alignment="CENTER_RIGHT" layoutX="335.0" layoutY="235.0" mnemonicParsing="false" onAction="#clickRegistrationButton" text="Registration" />
    </children>
 </AnchorPane>

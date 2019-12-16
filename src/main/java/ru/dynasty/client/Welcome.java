@@ -12,23 +12,23 @@ import java.io.IOException;
 public class Welcome {
 
     @FXML
-    Button button;
+    Button login;
+    @FXML
+    Button registration;
 
     @FXML
     void clickLoginButton() throws IOException {
-        Stage stage = (Stage) button.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("C:\\DynastyClient\\src\\main\\resources\\LogIn.fxml"));
-        Parent root1 = (Parent) loader.load();
+        Stage stage = (Stage) login.getScene().getWindow();
+        Parent root1 = FXMLLoader.load(getClass().getResource("LogIn.fxml"));
         stage.setScene(new Scene(root1));
         stage.show();
     };
 
     @FXML
     void clickRegistrationButton() throws IOException {
-        Stage stage = (Stage) button.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("C:\\DynastyClient\\src\\main\\resources\\Registration.fxml"));
+        Stage stage = (Stage) registration.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Registration.fxml"));
         Parent root1 = (Parent) loader.load();
         stage.setScene(new Scene(root1));
-        stage.show();
     };
 }
