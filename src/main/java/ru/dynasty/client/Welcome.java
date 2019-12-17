@@ -18,17 +18,27 @@ public class Welcome {
 
     @FXML
     void clickLoginButton() throws IOException {
-        Stage stage = (Stage) login.getScene().getWindow();
-        Parent root1 = FXMLLoader.load(getClass().getResource("LogIn.fxml"));
-        stage.setScene(new Scene(root1));
-        stage.show();
+        try {
+            login.getScene().getWindow().hide();
+            Parent root = FXMLLoader.load(getClass().getResource("/LogIn.fxml"));
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        } catch (IOException e) {
+            throw new IllegalArgumentException(e);
+        }
     };
 
     @FXML
     void clickRegistrationButton() throws IOException {
-        Stage stage = (Stage) registration.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Registration.fxml"));
-        Parent root1 = (Parent) loader.load();
-        stage.setScene(new Scene(root1));
+        try {
+            registration.getScene().getWindow().hide();
+            Parent root = FXMLLoader.load(getClass().getResource("/Registration.fxml"));
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        } catch (IOException e) {
+            throw new IllegalArgumentException(e);
+        }
     };
 }
