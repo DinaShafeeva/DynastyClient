@@ -8,9 +8,8 @@ import javafx.stage.Stage;
 
 public class MainApp extends Application {
     public void start(Stage primaryStage) throws Exception {
-        String fxmlFile = "/Splash.fxml";
         FXMLLoader loader = new FXMLLoader();
-        Parent root = loader.load(getClass().getResourceAsStream(fxmlFile));
+        Parent root = loader.load(getClass().getResourceAsStream("/Splash.fxml"));
         primaryStage.setTitle("Dynasty");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();

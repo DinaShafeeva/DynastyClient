@@ -28,7 +28,7 @@ public class SplashController implements Initializable {
     public void click() {
         try {
             parent.getScene().getWindow().hide();
-            Parent root = FXMLLoader.load(getClass().getResource("Welcome.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/Welcome.fxml"));
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.showAndWait();
@@ -36,14 +36,6 @@ public class SplashController implements Initializable {
             throw new IllegalArgumentException(e);
         }
     }
-//    @FXML
-//    public void click() throws IOException {
-//        FXMLLoader loader = new FXMLLoader();
-//        Parent root = loader.load(getClass().getResourceAsStream("Welcome.fxml"));
-//        Stage stage = (Stage) parent.getScene().getWindow();
-//        stage.setScene(new Scene(root));
-//        //stage.setScene(Utils.Resource.scenes.get("welcome"));
-//    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
