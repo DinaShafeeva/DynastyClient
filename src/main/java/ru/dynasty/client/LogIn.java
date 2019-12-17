@@ -16,10 +16,14 @@ public class LogIn  {
 
     @FXML
     void clickStartButton() throws IOException {
-        Stage stage = (Stage) button.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("C:\\DynastyClient\\src\\main\\resources\\Main.fxml"));
-        Parent root1 = (Parent) loader.load();
-        stage.setScene(new Scene(root1));
-        stage.show();
+        try {
+            button.getScene().getWindow().hide();
+            Parent root = FXMLLoader.load(getClass().getResource("/Main.fxml"));
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        } catch (IOException e) {
+            throw new IllegalArgumentException(e);
+        }
     };
 }
