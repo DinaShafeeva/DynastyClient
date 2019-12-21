@@ -6,24 +6,34 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.dynasty.client.Welcome">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.dynasty.client.Controllers.WelcomeController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="600.0">
          <image>
-            <Image url="@Background1.jpg" />
+            <Image url="@Images/Background1.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="login" layoutX="198.0" layoutY="266.0" mnemonicParsing="false" onAction="#clickLoginButton" text="Log in" />
-      <Text style="-fx-stroke: white" fill="WHITE" fontSmoothingType="LCD" layoutX="219.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to the Dynasty" textAlignment="CENTER">
+      <Button fx:id="login" layoutX="198.0" layoutY="266.0" mnemonicParsing="false" onAction="#clickLoginButton" text="Log in">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Text fill="WHITE" fontSmoothingType="LCD" layoutX="134.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-stroke: white" text="Welcome to the Dynasty" textAlignment="CENTER" wrappingWidth="331.658203125">
          <effect>
             <Reflection bottomOpacity="0.31" fraction="0.89" topOpacity="0.49" />
          </effect>
          <cursor>
-            <Cursor fx:constant="CLOSED_HAND" />
+            <Cursor fx:constant="NONE" />
          </cursor>
+         <font>
+            <Font name="Elephant" size="24.0" />
+         </font>
       </Text>
-      <Button fx:id="registration" alignment="CENTER_RIGHT" layoutX="339.0" layoutY="266.0" mnemonicParsing="false" onAction="#clickRegistrationButton" text="Registration" />
+      <Button fx:id="registration" alignment="CENTER_RIGHT" layoutX="339.0" layoutY="266.0" mnemonicParsing="false" onAction="#clickRegistrationButton" text="Registration">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
    </children>
 </AnchorPane>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.dynasty.client.Controllers.ProfileController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0">
+         <image>
+            <Image url="@Images/background7.jpg" />
+         </image>
+      </ImageView>
+      <Text layoutX="230.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login: " wrappingWidth="86.43603515625">
+         <font>
+            <Font name="Bauhaus 93" size="29.0" />
+         </font>
+      </Text>
+      <Text layoutX="153.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="number of victories: " textAlignment="CENTER" wrappingWidth="292.43603515625">
+         <font>
+            <Font name="Bauhaus 93" size="29.0" />
+         </font>
+      </Text>
+      <Text layoutX="153.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="number of defeats: " textAlignment="CENTER" wrappingWidth="305.43603515625">
+         <font>
+            <Font name="Bauhaus 93" size="29.0" />
+         </font>
+      </Text>
+      <Text fx:id="name" layoutX="317.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font name="Bauhaus 93" size="29.0" />
+         </font>
+      </Text>
+      <Text fx:id="victories" layoutX="433.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font name="Bauhaus 93" size="29.0" />
+         </font>
+      </Text>
+      <Text fx:id="defeats" layoutX="433.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font name="Bauhaus 93" size="29.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

@@ -1,35 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.dynasty.client.Main">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.dynasty.client.Controllers.MainController">
    <children>
-      <MenuBar layoutX="7.0" layoutY="7.0" prefHeight="32.0" prefWidth="395.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="Profile" onAction="#clickProfileButton">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Play with Bot" onAction="#clickBotButton">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Play with Real" onAction="#clickRealButton">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-            <Menu mnemonicParsing="false" text="All cards" onAction="#clickAllCardsButton">
+      <ImageView fitHeight="400.0" fitWidth="608.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/BackgroundMain.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="play" defaultButton="true" layoutX="206.0" layoutY="151.0" mnemonicParsing="false" onAction="#onClickPlay" prefHeight="98.0" prefWidth="191.0" style="-fx-background-color: 0000;" text="Play">
+         <font>
+            <Font name="Bauhaus 93" size="52.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <VBox prefHeight="200.0" prefWidth="118.0">
+         <children>
+            <MenuButton alignment="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="104.0" style="-fx-background-color: #0f1b45;" text="Info" textFill="#fffefe">
               <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
+                  <MenuItem mnemonicParsing="false" onAction="#onClickProfile" style="-fx-background: #0f1b45;" text="Profile" />
+                <MenuItem mnemonicParsing="false" onAction="#onClickRools" text="Rools" />
+                <MenuItem mnemonicParsing="false" onAction="#onClickCards" text="All cards" />
               </items>
-            </Menu>
-        </menus>
-      </MenuBar>
+               <font>
+                  <Font name="Times New Roman" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </MenuButton>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>
