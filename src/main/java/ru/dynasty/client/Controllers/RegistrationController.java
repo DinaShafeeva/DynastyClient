@@ -7,8 +7,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import ru.dynasty.client.Connector;
+import ru.dynasty.client.Protocol.Commands;
+import ru.dynasty.client.RequestCreator;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class RegistrationController {
     @FXML
@@ -23,8 +28,11 @@ public class RegistrationController {
     @FXML
     void clickRegistrateButton() throws IOException {
         if(password1.getLength() > 6){
-            if(password1 == password2) {
-                //взять данные с логина и пароля и куда-то их деть при нажатии кнопочки
+            if(password1.getText().equals(password2.getText())) {
+                Map<String, Object> map = new HashMap<String, Object>();
+                map.put("login", login.getText());
+                map.put("password", password1.getText());
+                Connector.getClientSocket().sendJsonMessage(RequestCreator.request(Commands.REGISTER.name(), map));
                 try {
                     regist.getScene().getWindow().hide();
                     Parent root = FXMLLoader.load(getClass().getResource("/Main.fxml"));
