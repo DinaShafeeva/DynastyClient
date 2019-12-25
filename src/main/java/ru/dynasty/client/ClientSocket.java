@@ -3,6 +3,7 @@ package ru.dynasty.client;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import ru.dynasty.client.Protocol.Request;
+import ru.dynasty.client.Protocol.ResponseHandler;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -35,8 +36,7 @@ public class ClientSocket {
         while (true) {
             try {
                 String message = reader.readLine();
-                //здесь нужно как-то применять ResponseHandler для получения данных
-                //ResponceHandler ;
+                ResponseHandler.doDispatch(message);
             } catch (IOException e) {
                 e.printStackTrace();
             }
