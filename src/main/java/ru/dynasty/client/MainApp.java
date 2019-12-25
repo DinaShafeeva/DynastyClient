@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 
 public class MainApp extends Application {
     public void start(Stage primaryStage) throws Exception {
+        //Utils.Resource.load();
         FXMLLoader loader = new FXMLLoader();
         Parent root = loader.load(getClass().getResourceAsStream("/Splash.fxml"));
         primaryStage.setTitle("Dynasty");

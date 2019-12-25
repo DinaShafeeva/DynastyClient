@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" >
+   <children>
+      <ImageView fitHeight="421.0" fitWidth="640.0" layoutX="-40.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/Background4.png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="8.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Altron recruited some superherous into his team and now try to take over the world. Try to stop him and to make characters free! Game's rules: After pressing the &quot;start&quot; button your battle with machine enemy will begin. Both of you and Altron have got only thee lifes. After every fight the looser gonna lose one of his lifes. To win fight you need to put on the desk three cards with the sum of attack points more than the sum of protect points of your enemy. And other way out, if Altron is attacking." textAlignment="CENTER" wrappingWidth="584.34033203125">
+         <font>
+            <Font name="Forte" size="23.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="164.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to the Dynasty!">
+         <font>
+            <Font name="Forte" size="24.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

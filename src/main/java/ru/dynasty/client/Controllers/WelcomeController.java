@@ -1,4 +1,4 @@
-package ru.dynasty.client;
+package ru.dynasty.client.Controllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class Welcome {
+public class WelcomeController {
 
     @FXML
     Button login;

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
@@ -8,16 +9,28 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.dynasty.client.Registration">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.dynasty.client.Controllers.RegistrationController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="600.0">
          <image>
-            <Image url="@Background3.jpg" />
+            <Image url="@Images/Background3.jpg" />
          </image>
       </ImageView>
-      <TextField layoutX="207.0" layoutY="130.0" promptText="Login" />
-      <TextField layoutX="207.0" layoutY="169.0" promptText="Password" />
-      <TextField layoutX="207.0" layoutY="208.0" promptText="Password Again" />
-      <Button layoutX="250.0" layoutY="274.0" mnemonicParsing="false" onAction="#clickRegistrateButton" text="Registration" />
+      <TextField layoutX="207.0" layoutY="130.0" promptText="Login">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
+      <TextField layoutX="207.0" layoutY="169.0" promptText="Password">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
+      <TextField layoutX="207.0" layoutY="208.0" promptText="Password Again">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
+      <Button fx:id="regist" layoutX="250.0" layoutY="274.0" mnemonicParsing="false" onAction="#clickRegistrateButton" text="Registration">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
    </children>
 </AnchorPane>

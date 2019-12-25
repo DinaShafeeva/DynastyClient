@@ -1,6 +1,9 @@
 package ru.dynasty.client;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.scene.control.TextArea;
+import ru.dynasty.client.Protocol.Request;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,20 +15,7 @@ public class ClientSocket {
     private Socket clientSocket;
     private BufferedReader reader;
     private PrintWriter writer;
-
-    String name;
-
-    public ClientSocket(String name, TextArea textArea) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String nameMess){
-        name = nameMess;
-    }
+    private ObjectMapper objectMapper;
 
     public void startConnection(String ip, Integer port) {
         try{
@@ -46,10 +36,18 @@ public class ClientSocket {
         while (true) {
             try {
                 String message = reader.readLine();
-                System.out.println(message);
+                //ResponceHandler ;
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
     };
+
+    public void sendJsonMessage(Request request) {
+        try {
+            writer.println(objectMapper.writeValueAsString(request));
+        } catch (JsonProcessingException e) {
+            throw new IllegalArgumentException(e);
+        }
+    }
 }

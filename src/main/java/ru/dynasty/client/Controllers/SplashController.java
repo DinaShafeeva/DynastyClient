@@ -1,4 +1,4 @@
-package ru.dynasty.client;
+package ru.dynasty.client.Controllers;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -9,7 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import javafx.stage.Window;
+import ru.dynasty.client.Utils;
 
 import java.io.IOException;
 import java.net.URL;
