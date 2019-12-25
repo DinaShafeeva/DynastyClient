@@ -9,5 +9,6 @@ public enum Commands {
     ABORT_GAME,
     START_GAME,
     GET_CARD_LIST,
-    PROFILE
+    PROFILE,
+    GET_GAME_INFO
 }

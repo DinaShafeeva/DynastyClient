@@ -76,8 +76,31 @@ public class ResponseHandler {
                     }
                 });
             }
+            case GET_GAME_INFO: {
+                Platform.runLater(() -> {
+                    try {
+                        Parent root = FXMLLoader.load(ResponseHandler.class.getResource("/Room.fxml"));
+                        Stage stage = Connector.getStage();
+                        stage.setScene(new Scene(root));
+                        ((Label) stage.getScene().lookup("#name")).setText((String) map.get("name"));
+                        ((Label) stage.getScene().lookup("#damage")).setText((String) map.get("damage"));
+                        String health = (String) map.get("health");
+                        String enemyHealth = (String) map.get("enemyHealth");
+                    } catch (IOException e) {
+                        throw new IllegalArgumentException(e);
+                    }
+                });
+            }
         }
     }
+
+    //динамическое изменение здоровья
+    private static void setHealth(String health, ImageView imageview){
+        if(Integer.parseInt(health)==0){
+            imageview.setImage("src/main/resources/Images/health0.png");
+        }
+    }
+
     //здесь я должна динамически рисовать карту, но идет туго
 //    private static void makeCard(Card card){
 //        Pane pane = new Pane();
