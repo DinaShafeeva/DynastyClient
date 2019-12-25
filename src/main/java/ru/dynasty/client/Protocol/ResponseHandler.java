@@ -1,5 +1,6 @@
 package ru.dynasty.client.Protocol;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -13,7 +14,6 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import ru.dynasty.client.Connector;
 import ru.dynasty.client.Models.Card;
-import sun.jvm.hotspot.tools.ObjectHistogram;
 
 import java.io.IOException;
 import java.util.LinkedHashMap;
@@ -22,7 +22,7 @@ import java.util.List;
 import static ru.dynasty.client.Protocol.Commands.*;
 
 public class ResponseHandler {
-    public static void doDispatch(String message){
+    public static void doDispatch(String message) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
         Response response = objectMapper.readValue(message, Response.class);
         LinkedHashMap<String, Object> map = (LinkedHashMap<String, Object>) response.getData();
@@ -79,12 +79,12 @@ public class ResponseHandler {
         }
     }
     //здесь я должна динамически рисовать карту, но идет туго
-    private static void makeCard(Card card){
-        Pane pane = new Pane();
-        pane.getChildren().add(ImageView image);
-        pane.getChildren().add(Text name);
-        pane.getChildren().add(Text power);
-        pane.getChildren().add(Text dif);
-
-    }
+//    private static void makeCard(Card card){
+//        Pane pane = new Pane();
+//        pane.getChildren().add(ImageView image);
+//        pane.getChildren().add(Text name);
+//        pane.getChildren().add(Text power);
+//        pane.getChildren().add(Text dif);
+//
+//    }
 }

@@ -2,8 +2,7 @@ package ru.dynasty.client.Controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-
-import javax.xml.soap.Text;
+import javafx.scene.text.Text;
 
 public class ProfileController {
     @FXML
