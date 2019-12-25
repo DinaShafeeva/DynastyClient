@@ -31,14 +31,6 @@ public class LogInController {
         map.put("login", login.getText());
         map.put("password", password.getText());
         Connector.getClientSocket().sendJsonMessage(RequestCreator.request(Commands.LOG_IN.name(), map));
-            try {
-                log.getScene().getWindow().hide();
-                Parent root = FXMLLoader.load(getClass().getResource("/Main.fxml"));
-                Stage stage = new Stage();
-                stage.setScene(new Scene(root));
-                stage.showAndWait();
-            } catch (IOException e) {
-                throw new IllegalArgumentException(e);
-            }
+        log.getScene().getWindow().hide();
     };
 }

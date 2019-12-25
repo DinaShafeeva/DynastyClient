@@ -7,5 +7,7 @@ public enum Commands {
     SEND_MESSAGE,
     SKIP_MOVE,
     ABORT_GAME,
-    START_GAME
+    START_GAME,
+    GET_CARD_LIST,
+    PROFILE
 }

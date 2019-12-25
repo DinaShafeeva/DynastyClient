@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import ru.dynasty.client.Connector;
 import ru.dynasty.client.Protocol.Commands;
@@ -24,6 +25,10 @@ public class RegistrationController {
     TextField password1;
     @FXML
     TextField password2;
+    @FXML
+    Text equals;
+    @FXML
+    Text lengthPassword;
 
     @FXML
     void clickRegistrateButton() throws IOException {
@@ -33,20 +38,12 @@ public class RegistrationController {
                 map.put("login", login.getText());
                 map.put("password", password1.getText());
                 Connector.getClientSocket().sendJsonMessage(RequestCreator.request(Commands.REGISTER.name(), map));
-                try {
                     regist.getScene().getWindow().hide();
-                    Parent root = FXMLLoader.load(getClass().getResource("/Main.fxml"));
-                    Stage stage = new Stage();
-                    stage.setScene(new Scene(root));
-                    stage.showAndWait();
-                } catch (IOException e) {
-                    throw new IllegalArgumentException(e);
-                }
             } else{
-                //пароли не равны
+                equals.setText("Passwords are not equals");
             }
         } else {
-            //просит заново ввести пароль
+            lengthPassword.setText("Password should be longer than 6 symbols");
         }
     };
 }
