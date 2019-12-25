@@ -178,17 +178,17 @@
             <Font name="Bodoni MT" size="23.0" />
          </font>
       </Text>
-      <Text layoutX="491.0" layoutY="334.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hawk Eye" textAlignment="CENTER" wrappingWidth="95.73291508853436">
+      <Text fx:id="nameCard1" layoutX="491.0" layoutY="334.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="95.73291508853436">
          <font>
             <Font name="Bodoni MT" size="17.0" />
          </font>
       </Text>
-      <Text layoutX="493.0" layoutY="396.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Power: 4" textAlignment="CENTER" wrappingWidth="91.46289810538292">
+      <Text layoutX="493.0" layoutY="383.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Power: " textAlignment="CENTER" wrappingWidth="91.46289810538292">
          <font>
             <Font name="Bodoni MT" size="23.0" />
          </font>
       </Text>
-      <Text layoutX="486.0" layoutY="433.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dif: 2" textAlignment="CENTER" wrappingWidth="105.46289739012718">
+      <Text layoutX="486.0" layoutY="446.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dif: " textAlignment="CENTER" wrappingWidth="105.46289739012718">
          <font>
             <Font name="Bodoni MT" size="23.0" />
          </font>
@@ -236,6 +236,36 @@
       <Text fx:id="secondName" layoutX="491.0" layoutY="554.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="95.73291508853436">
          <font>
             <Font name="Bodoni MT" size="17.0" />
+         </font>
+      </Text>
+      <Text fx:id="powerCard1" layoutX="493.0" layoutY="413.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="91.46289810538292">
+         <font>
+            <Font name="Bodoni MT" size="23.0" />
+         </font>
+      </Text>
+      <Text fx:id="difCard1" layoutX="494.0" layoutY="468.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="91.46289810538292">
+         <font>
+            <Font name="Bodoni MT" size="23.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="176.0" fitWidth="108.0" layoutX="381.0" layoutY="307.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/Cards.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="nameCard2" layoutX="384.0" layoutY="334.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="95.73291508853436">
+         <font>
+            <Font name="Bodoni MT" size="17.0" />
+         </font>
+      </Text>
+      <Text fx:id="powerCard2" layoutX="386.0" layoutY="412.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="91.46289810538292">
+         <font>
+            <Font name="Bodoni MT" size="23.0" />
+         </font>
+      </Text>
+      <Text fx:id="difCard2" layoutX="385.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="91.46289810538292">
+         <font>
+            <Font name="Bodoni MT" size="23.0" />
          </font>
       </Text>
    </children>

@@ -5,6 +5,7 @@ import ru.dynasty.client.Protocol.Request;
 import java.util.Map;
 
 public class RequestCreator {
+    //для отправки jsonчиков
     public static Request request (String header, Map<String, Object> parameters) {
         Request request = new Request();
         request.setHeader(header);

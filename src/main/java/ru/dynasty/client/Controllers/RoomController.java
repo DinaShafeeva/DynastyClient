@@ -26,8 +26,20 @@ public class RoomController {
     Text enemy;
     //имя противника нужно получить
     @FXML
-    Text name;
+    Text yourName;
     //твоя имя нужно получить
+    @FXML
+    Text nameCard1;
+    @FXML
+    Text powerCard1;
+    @FXML
+    Text difCard1;
+    @FXML
+    Text nameCard2;
+    @FXML
+    Text powerCard2;
+    @FXML
+    Text difCard2;
     @FXML
     Button end;
     @FXML
@@ -48,7 +60,18 @@ public class RoomController {
         //происходит отправка сообщения
     }
     @FXML
-    public void onClickCard(ActionEvent actionEvent, Button card, Text name, Text power, Text Dif) throws IOException {
-        //при нажатии на карту, имя и сила уходят
+    public void onClickCard(ActionEvent actionEvent, Button card, Text name, Text power, Text dif) throws IOException {
+        if(nameCard1.equals(" ")){
+            nameCard1.setText(name.getText());
+            powerCard1.setText(power.getText());
+            difCard1.setText(dif.getText());
+        } else {
+            nameCard2.setText(name.getText());
+            powerCard2.setText(power.getText());
+            difCard2.setText(dif.getText());
+        }
+        name.setText(" ");
+        power.setText(" ");
+        dif.setText(" ");
     }
 }
