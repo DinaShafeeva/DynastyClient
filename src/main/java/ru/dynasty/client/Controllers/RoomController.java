@@ -6,9 +6,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import ru.dynasty.client.Models.Card;
+import ru.dynasty.client.Models.CardPane;
 
 import java.io.IOException;
 
@@ -23,29 +29,23 @@ public class RoomController {
     Text damage;
     //должен заполняться урон
     @FXML
-    Text enemy;
-    //имя противника нужно получить
-    @FXML
     Text yourName;
     //твоя имя нужно получить
-    @FXML
-    Text nameCard1;
-    @FXML
-    Text powerCard1;
-    @FXML
-    Text difCard1;
-    @FXML
-    Text nameCard2;
-    @FXML
-    Text powerCard2;
-    @FXML
-    Text difCard2;
     @FXML
     Button end;
     @FXML
     Button send;
     @FXML
     Button firstCard;
+
+    @FXML
+    static HBox hboxMyCard;
+
+    @FXML
+    public static void method(Card card) {
+        CardPane cardPane = new CardPane(card);
+        hboxMyCard.getChildren().addAll(cardPane);
+    }
 
     @FXML
     public void onClickEnd(ActionEvent actionEvent) throws IOException {

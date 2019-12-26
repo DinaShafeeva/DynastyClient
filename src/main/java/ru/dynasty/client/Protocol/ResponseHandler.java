@@ -7,12 +7,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import ru.dynasty.client.Connector;
+import ru.dynasty.client.Controllers.RoomController;
 import ru.dynasty.client.Models.Card;
 import ru.dynasty.client.Utils;
 
@@ -34,7 +36,9 @@ public class ResponseHandler {
                 Platform.runLater(() -> {
                     try {
                         Parent root = FXMLLoader.load(ResponseHandler.class.getResource("/Main.fxml"));
+                        Connector.setStage(new Stage());
                         Stage stage = Connector.getStage();
+
                         stage.setScene(new Scene(root));
                         stage.show();
                         Utils.setStage(stage);
@@ -77,6 +81,7 @@ public class ResponseHandler {
                         card.setName((String)cardMap.get("name"));
                         card.setPower((String)cardMap.get("power"));
                         card.setDif((String)cardMap.get("dif"));
+                        RoomController.method(card);
                     }
                 });
             }
@@ -101,7 +106,8 @@ public class ResponseHandler {
     //динамическое изменение здоровья
     private static void setHealth(String health, ImageView imageview){
         if(Integer.parseInt(health)==0){
-            imageview.setImage("src/main/resources/Images/health0.png");
+            Image img = new Image("src/main/resources/Images/health0.png");
+            imageview.setImage(img);
         }
     }
 

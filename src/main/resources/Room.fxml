@@ -43,7 +43,7 @@
             <Font name="Copperplate Gothic Bold" size="27.0" />
          </font>
       </Text>
-      <Text fx:id="enemy" fill="WHITE" layoutX="571.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Altron" wrappingWidth="149.97070488333702">
+      <Text fill="WHITE" layoutX="571.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Altron" wrappingWidth="149.97070488333702">
          <font>
             <Font name="Colonna MT" size="54.0" />
          </font>
@@ -73,31 +73,6 @@
             <Image url="@Images/Card.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="176.0" fitWidth="108.0" layoutX="382.0" layoutY="533.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Images/Cards.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="176.0" fitWidth="108.0" layoutX="490.0" layoutY="533.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Images/Cards.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="176.0" fitWidth="108.0" layoutX="596.0" layoutY="533.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Images/Cards.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="176.0" fitWidth="108.0" layoutX="703.0" layoutY="533.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Images/Cards.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="176.0" fitWidth="108.0" layoutX="811.0" layoutY="533.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Images/Cards.png" />
-         </image>
-      </ImageView>
       <ImageView fitHeight="176.0" fitWidth="108.0" layoutX="703.0" layoutY="307.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Images/Cards.png" />
@@ -108,76 +83,11 @@
             <Font name="Bauhaus 93" size="55.0" />
          </font>
       </Text>
-      <Text fx:id="firstName" layoutX="384.0" layoutY="554.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Black Widow">
-         <font>
-            <Font name="Bodoni MT" size="17.0" />
-         </font>
-      </Text>
-      <Text layoutX="385.0" layoutY="620.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Power: 4" textAlignment="CENTER" wrappingWidth="91.46289810538292">
-         <font>
-            <Font name="Bodoni MT" size="23.0" />
-         </font>
-      </Text>
-      <Text layoutX="378.0" layoutY="661.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dif: 2" textAlignment="CENTER" wrappingWidth="105.46289739012718">
-         <font>
-            <Font name="Bodoni MT" size="23.0" />
-         </font>
-      </Text>
-      <Text layoutX="492.0" layoutY="554.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="95.73291508853436">
-         <font>
-            <Font name="Bodoni MT" size="17.0" />
-         </font>
-      </Text>
       <ImageView fitHeight="176.0" fitWidth="108.0" layoutX="491.0" layoutY="307.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Images/Cards.png" />
          </image>
       </ImageView>
-      <Text fx:id="thirdName" layoutX="597.0" layoutY="554.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Halk" textAlignment="CENTER" wrappingWidth="95.73291508853436">
-         <font>
-            <Font name="Bodoni MT" size="17.0" />
-         </font>
-      </Text>
-      <Text layoutX="597.0" layoutY="620.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Power: 10" textAlignment="CENTER" wrappingWidth="95.73291508853436">
-         <font>
-            <Font name="Bodoni MT" size="23.0" />
-         </font>
-      </Text>
-      <Text layoutX="592.0" layoutY="661.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dif: 9" textAlignment="CENTER" wrappingWidth="105.46289739012718">
-         <font>
-            <Font name="Bodoni MT" size="23.0" />
-         </font>
-      </Text>
-      <Text fx:id="fourthName" layoutX="705.0" layoutY="554.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Iron Man" textAlignment="CENTER" wrappingWidth="95.73291508853436">
-         <font>
-            <Font name="Bodoni MT" size="17.0" />
-         </font>
-      </Text>
-      <Text layoutX="705.0" layoutY="620.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Power: 8" textAlignment="CENTER" wrappingWidth="95.73291508853436">
-         <font>
-            <Font name="Bodoni MT" size="23.0" />
-         </font>
-      </Text>
-      <Text layoutX="700.0" layoutY="661.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dif: 7" textAlignment="CENTER" wrappingWidth="105.46289739012718">
-         <font>
-            <Font name="Bodoni MT" size="23.0" />
-         </font>
-      </Text>
-      <Text fx:id="fifthName" layoutX="812.0" layoutY="554.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thor" textAlignment="CENTER" wrappingWidth="95.73291508853436">
-         <font>
-            <Font name="Bodoni MT" size="17.0" />
-         </font>
-      </Text>
-      <Text layoutX="813.0" layoutY="619.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Power: 9" textAlignment="CENTER" wrappingWidth="95.73291508853436">
-         <font>
-            <Font name="Bodoni MT" size="23.0" />
-         </font>
-      </Text>
-      <Text layoutX="807.0" layoutY="661.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dif: 9" textAlignment="CENTER" wrappingWidth="105.46289739012718">
-         <font>
-            <Font name="Bodoni MT" size="23.0" />
-         </font>
-      </Text>
       <Text fx:id="nameCard1" layoutX="491.0" layoutY="334.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="95.73291508853436">
          <font>
             <Font name="Bodoni MT" size="17.0" />
@@ -228,16 +138,6 @@
             <Font name="Bauhaus 93" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="firstCard" layoutX="384.0" layoutY="534.0" mnemonicParsing="false" prefHeight="176.0" prefWidth="91.0" style="-fx-background-color: 00000;" />
-      <Button fx:id="secondCard" layoutX="494.0" layoutY="533.0" mnemonicParsing="false" prefHeight="176.0" prefWidth="91.0" style="-fx-background-color: 00000;" />
-      <Button fx:id="thirdCard" layoutX="599.0" layoutY="533.0" mnemonicParsing="false" prefHeight="176.0" prefWidth="91.0" style="-fx-background-color: 00000;" />
-      <Button fx:id="fourthCard" layoutX="707.0" layoutY="534.0" mnemonicParsing="false" prefHeight="176.0" prefWidth="91.0" style="-fx-background-color: 00000;" />
-      <Button fx:id="fifthCard" layoutX="814.0" layoutY="533.0" mnemonicParsing="false" prefHeight="176.0" prefWidth="91.0" style="-fx-background-color: 00000;" />
-      <Text fx:id="secondName" layoutX="491.0" layoutY="554.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="95.73291508853436">
-         <font>
-            <Font name="Bodoni MT" size="17.0" />
-         </font>
-      </Text>
       <Text fx:id="powerCard1" layoutX="493.0" layoutY="413.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="91.46289810538292">
          <font>
             <Font name="Bodoni MT" size="23.0" />
@@ -248,11 +148,6 @@
             <Font name="Bodoni MT" size="23.0" />
          </font>
       </Text>
-      <ImageView fitHeight="176.0" fitWidth="108.0" layoutX="381.0" layoutY="307.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Images/Cards.png" />
-         </image>
-      </ImageView>
       <Text fx:id="nameCard2" layoutX="384.0" layoutY="334.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="95.73291508853436">
          <font>
             <Font name="Bodoni MT" size="17.0" />
@@ -268,5 +163,6 @@
             <Font name="Bodoni MT" size="23.0" />
          </font>
       </Text>
+      <HBox fx:id="hboxMyCard" layoutX="383.0" layoutY="533.0" prefHeight="176.0" prefWidth="525.0" />
    </children>
 </AnchorPane>
