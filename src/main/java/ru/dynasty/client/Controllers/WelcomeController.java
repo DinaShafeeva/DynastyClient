@@ -20,12 +20,9 @@ public class WelcomeController {
     @FXML
     void clickLoginButton() throws IOException {
         try {
-
-//            login.getScene().getWindow().hide();
             Parent root = FXMLLoader.load(getClass().getResource("/LogIn.fxml"));
             Stage stage = (Stage) login.getScene().getWindow();
             stage.getScene().setRoot(root);
-//            stage.showAndWait();
             Utils.setStage(stage);
         } catch (IOException e) {
             throw new IllegalArgumentException(e);
@@ -35,16 +32,12 @@ public class WelcomeController {
     @FXML
     void clickRegistrationButton() throws IOException {
         try {
-            registration.getScene().getWindow().hide();
             Parent root = FXMLLoader.load(getClass().getResource("/Registration.fxml"));
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.showAndWait();
+            Stage stage = (Stage) registration.getScene().getWindow();
+            stage.getScene().setRoot(root);
             Utils.setStage(stage);
         } catch (IOException e) {
             throw new IllegalArgumentException(e);
         }
     }
-
-    ;
 }
