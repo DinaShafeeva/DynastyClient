@@ -8,12 +8,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import ru.dynasty.client.Connector;
+import ru.dynasty.client.Controllers.RoomController;
 import ru.dynasty.client.Models.Card;
 import ru.dynasty.client.Utils;
 
@@ -42,6 +44,7 @@ public class ResponseHandler {
                         Parent root = FXMLLoader.load(ResponseHandler.class.getResource("/Main.fxml"));
                         Connector.setStage(new Stage());
                         Stage stage = Connector.getStage();
+
                         stage.setScene(new Scene(root));
                         stage.show();
                         Utils.setStage(stage);
@@ -96,9 +99,31 @@ public class ResponseHandler {
                     for (Object cardObject : cards) {
                         LinkedHashMap<String, Object> cardMap = (LinkedHashMap<String, Object>) cardObject;
                         Card card = new Card();
+
+                        card.setName((String)cardMap.get("name"));
+                        card.setPower((String)cardMap.get("power"));
+                        card.setDif((String)cardMap.get("dif"));
+                        RoomController.method(card);
+                    }
+                });
+            }
+            case GET_GAME_INFO: {
+                Platform.runLater(() -> {
+                    try {
+                        Parent root = FXMLLoader.load(ResponseHandler.class.getResource("/Room.fxml"));
+                        Stage stage = Connector.getStage();
+                        stage.setScene(new Scene(root));
+                        ((Label) stage.getScene().lookup("#name")).setText((String) map.get("name"));
+                        ((Label) stage.getScene().lookup("#damage")).setText((String) map.get("damage"));
+                        String health = (String) map.get("health");
+                        String enemyHealth = (String) map.get("enemyHealth");
+                    } catch (IOException e) {
+                        throw new IllegalArgumentException(e);
+
                         card.setName((String) cardMap.get("name"));
                         card.setPower((String) cardMap.get("power"));
                         card.setDif((String) cardMap.get("dif"));
+
                     }
                 });
                 break;
@@ -106,7 +131,19 @@ public class ResponseHandler {
 
         }
     }
+
+
+    //динамическое изменение здоровья
+    private static void setHealth(String health, ImageView imageview){
+        if(Integer.parseInt(health)==0){
+            Image img = new Image("src/main/resources/Images/health0.png");
+            imageview.setImage(img);
+        }
+    }
+
+
 }
+
     //здесь я должна динамически рисовать карту, но идет туго
 //    private static void makeCard(Card card){
 //        Pane pane = new Pane();

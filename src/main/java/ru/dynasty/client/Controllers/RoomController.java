@@ -6,46 +6,36 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.image.ImageView;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import ru.dynasty.client.ClientSocket;
+import ru.dynasty.client.Models.Card;
+import ru.dynasty.client.Models.CardPane;
 
 import java.io.IOException;
 
 public class RoomController {
     @FXML
-    ImageView enemyHealth;
-    //должна меняться картинка здоровья противника
-    @FXML
-    ImageView myHealth;
-    //должна меняться картинка твоего здоровья
-    @FXML
-    Text damage;
-    //должен заполняться урон
-    @FXML
-    Text enemy;
-    //имя противника нужно получить
-    @FXML
     Text yourName;
-    //твоя имя нужно получить
-    @FXML
-    Text nameCard1;
-    @FXML
-    Text powerCard1;
-    @FXML
-    Text difCard1;
-    @FXML
-    Text nameCard2;
-    @FXML
-    Text powerCard2;
-    @FXML
-    Text difCard2;
     @FXML
     Button end;
     @FXML
     Button send;
     @FXML
-    Button firstCard;
+    TextField oneMessage;
+
+    ClientSocket clientSocket;
+
+    @FXML
+    HBox hboxMyCard;
+
+    @FXML
+    public static void drawCard(Card card, HBox hboxMyCard) {
+        CardPane cardPane = new CardPane(card);
+        hboxMyCard.getChildren().addAll(cardPane);
+    }
 
     @FXML
     public void onClickEnd(ActionEvent actionEvent) throws IOException {
@@ -55,23 +45,12 @@ public class RoomController {
         stage.setScene(new Scene(root));
         stage.showAndWait();
     }
+
+
     @FXML
     public void onClickSend(ActionEvent actionEvent) throws IOException {
-        //происходит отправка сообщения
+        String s = oneMessage.getText();
+        clientSocket.sendMessage(yourName.getText() + ": " + s);
     }
-    @FXML
-    public void onClickCard(ActionEvent actionEvent, Button card, Text name, Text power, Text dif) throws IOException {
-        if(nameCard1.equals(" ")){
-            nameCard1.setText(name.getText());
-            powerCard1.setText(power.getText());
-            difCard1.setText(dif.getText());
-        } else {
-            nameCard2.setText(name.getText());
-            powerCard2.setText(power.getText());
-            difCard2.setText(dif.getText());
-        }
-        name.setText(" ");
-        power.setText(" ");
-        dif.setText(" ");
-    }
+
 }

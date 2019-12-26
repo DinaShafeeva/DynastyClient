@@ -10,5 +10,9 @@ public enum Commands {
     START_GAME,
     GET_CARD_LIST,
     PROFILE,
+
+    GET_GAME_INFO,
+
     UNSUCCESSFUL
+
 }
