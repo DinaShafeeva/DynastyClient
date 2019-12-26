@@ -10,9 +10,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import ru.dynasty.client.Connector;
 import ru.dynasty.client.Controllers.RoomController;
@@ -99,11 +97,11 @@ public class ResponseHandler {
                     for (Object cardObject : cards) {
                         LinkedHashMap<String, Object> cardMap = (LinkedHashMap<String, Object>) cardObject;
                         Card card = new Card();
-
+                        Stage stage = Connector.getStage();
                         card.setName((String)cardMap.get("name"));
                         card.setPower((String)cardMap.get("power"));
                         card.setDif((String)cardMap.get("dif"));
-                        RoomController.method(card);
+                        RoomController.drawCard(card, (HBox) stage.getScene().lookup("#hboxMyCard") );
                     }
                 });
             }
@@ -119,11 +117,6 @@ public class ResponseHandler {
                         String enemyHealth = (String) map.get("enemyHealth");
                     } catch (IOException e) {
                         throw new IllegalArgumentException(e);
-
-                        card.setName((String) cardMap.get("name"));
-                        card.setPower((String) cardMap.get("power"));
-                        card.setDif((String) cardMap.get("dif"));
-
                     }
                 });
                 break;
@@ -132,25 +125,23 @@ public class ResponseHandler {
         }
     }
 
-
     //динамическое изменение здоровья
     private static void setHealth(String health, ImageView imageview){
         if(Integer.parseInt(health)==0){
             Image img = new Image("src/main/resources/Images/health0.png");
             imageview.setImage(img);
+        } else if(Integer.parseInt(health)==1){
+            Image img = new Image("src/main/resources/Images/health1.png");
+            imageview.setImage(img);
+        } else if(Integer.parseInt(health)==2){
+            Image img = new Image("src/main/resources/Images/health2.png");
+            imageview.setImage(img);
+        } else if(Integer.parseInt(health)==3){
+            Image img = new Image("src/main/resources/Images/health3.png");
+            imageview.setImage(img);
         }
     }
 
-
 }
 
-    //здесь я должна динамически рисовать карту, но идет туго
-//    private static void makeCard(Card card){
-//        Pane pane = new Pane();
-//        pane.getChildren().add(ImageView image);
-//        pane.getChildren().add(Text name);
-//        pane.getChildren().add(Text power);
-//        pane.getChildren().add(Text dif);
-//
-//    }
 
