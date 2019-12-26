@@ -39,7 +39,6 @@ public class MainController {
     }
     @FXML
     public void onClickPlay(ActionEvent actionEvent) throws IOException {
-        //play.getScene().getWindow().hide();
         Parent root = FXMLLoader.load(getClass().getResource("/Room.fxml"));
         Stage stage = new Stage();
         stage.setScene(new Scene(root));

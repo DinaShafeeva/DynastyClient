@@ -59,6 +59,7 @@ public class ResponseHandler {
                 break;
             }
             case REGISTER: {
+                Platform.setImplicitExit(false);
                 System.out.println("riba");
                 Platform.runLater(() -> {
                     System.out.println("riba2");
