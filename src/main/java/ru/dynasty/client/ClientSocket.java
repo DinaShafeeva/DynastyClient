@@ -17,6 +17,10 @@ public class ClientSocket {
     private PrintWriter writer;
     private ObjectMapper objectMapper;
 
+    public ClientSocket() {
+        objectMapper = new ObjectMapper();
+    }
+
     public void startConnection(String ip, Integer port) {
         try{
             this.clientSocket = new Socket(ip, port);

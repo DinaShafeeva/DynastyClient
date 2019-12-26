@@ -32,7 +32,7 @@ public class RegistrationController {
 
     @FXML
     void clickRegistrateButton() throws IOException {
-        if(password1.getLength() > 6){
+        if(password1.getText().length() > 6){
             if(password1.getText().equals(password2.getText())) {
                 Map<String, Object> map = new HashMap<String, Object>();
                 map.put("login", login.getText());
