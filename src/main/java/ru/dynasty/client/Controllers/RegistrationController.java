@@ -38,7 +38,6 @@ public class RegistrationController {
                 map.put("login", login.getText());
                 map.put("password", password1.getText());
                 Connector.getClientSocket().sendJsonMessage(RequestCreator.request(Commands.REGISTER.name(), map));
-                    regist.getScene().getWindow().hide();
             } else{
                 equals.setText("Passwords are not equals");
             }

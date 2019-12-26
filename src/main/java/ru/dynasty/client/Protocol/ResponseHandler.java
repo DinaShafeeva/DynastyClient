@@ -34,21 +34,16 @@ public class ResponseHandler {
         System.out.println(Commands.LOG_IN.equals(name));
         switch (name) {
             case LOG_IN: {
-                System.out.println("riba");
                 Platform.setImplicitExit(false);
                 Platform.runLater(() -> {
-                    System.out.println("riba2");
                     try {
                         Parent root = FXMLLoader.load(ResponseHandler.class.getResource("/Main.fxml"));
                         Connector.setStage(new Stage());
                         Stage stage = Connector.getStage();
-
                         stage.setScene(new Scene(root));
                         stage.show();
                         Utils.setStage(stage);
-                        System.out.println(name + " 2");
                     } catch (IOException e) {
-                        System.out.println("riba3");
                         throw new IllegalArgumentException(e);
                     }
                 });
@@ -64,13 +59,19 @@ public class ResponseHandler {
                 break;
             }
             case REGISTER: {
+                System.out.println("riba");
                 Platform.runLater(() -> {
+                    System.out.println("riba2");
                     try {
                         Parent root = FXMLLoader.load(ResponseHandler.class.getResource("/Main.fxml"));
                         Connector.setStage(new Stage());
                         Stage stage = Connector.getStage();
                         stage.setScene(new Scene(root));
+                        stage.show();
+                        Utils.setStage(stage);
+                        System.out.println(name + " 2");
                     } catch (IOException e) {
+                        System.out.println("riba3");
                         throw new IllegalArgumentException(e);
                     }
                 });
