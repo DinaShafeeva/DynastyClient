@@ -30,13 +30,9 @@ public class Response<T> {
     }
 
 
-    public void setHeaderType(String type) {
-        this.header.setType(type);
-    }
 
     public String getHeaderName() { return this.header.getName(); }
 
-    public String getHeaderType() { return this.header.getType(); }
 
     @Override
     public String toString() {
@@ -44,7 +40,6 @@ public class Response<T> {
                 "{" +
                         "header: {" +
                         "\"name\"=\"" + getHeaderName() + "\", " +
-                        "\"type\"=\"" + getHeaderType() + "\" " +
                         "}" +
                         "data: " + getData() + "" +
                         "}";
@@ -60,7 +55,6 @@ public class Response<T> {
 class Header {
 
     private String name;
-    private String type;
 
     public Header() {}
 
@@ -68,14 +62,10 @@ class Header {
         return name;
     }
 
-    public String getType() { return type;}
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
 
 }

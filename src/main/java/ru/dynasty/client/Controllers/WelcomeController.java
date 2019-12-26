@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import ru.dynasty.client.Utils;
 
 import java.io.IOException;
 
@@ -19,15 +20,17 @@ public class WelcomeController {
     @FXML
     void clickLoginButton() throws IOException {
         try {
-            login.getScene().getWindow().hide();
+
+//            login.getScene().getWindow().hide();
             Parent root = FXMLLoader.load(getClass().getResource("/LogIn.fxml"));
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.showAndWait();
+            Stage stage = (Stage) login.getScene().getWindow();
+            stage.getScene().setRoot(root);
+//            stage.showAndWait();
+            Utils.setStage(stage);
         } catch (IOException e) {
             throw new IllegalArgumentException(e);
         }
-    };
+    }
 
     @FXML
     void clickRegistrationButton() throws IOException {
@@ -37,8 +40,11 @@ public class WelcomeController {
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.showAndWait();
+            Utils.setStage(stage);
         } catch (IOException e) {
             throw new IllegalArgumentException(e);
         }
-    };
+    }
+
+    ;
 }

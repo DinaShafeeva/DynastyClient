@@ -31,7 +31,9 @@ public class LogInController {
         map.put("login", login.getText());
         map.put("password", password.getText());
         Connector.getClientSocket().sendJsonMessage(RequestCreator.request(Commands.LOG_IN.name(), map));
-        log.getScene().getWindow().hide();
+
+     
+       // log.getScene().getWindow().hide();
 
     };
 }
