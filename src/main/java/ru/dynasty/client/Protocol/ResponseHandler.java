@@ -6,6 +6,7 @@ import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
@@ -23,36 +24,56 @@ import java.util.List;
 import static ru.dynasty.client.Protocol.Commands.*;
 
 public class ResponseHandler {
+
     public static void doDispatch(String message) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
         Response response = objectMapper.readValue(message, Response.class);
         LinkedHashMap<String, Object> map = (LinkedHashMap<String, Object>) response.getData();
         Commands name = Commands.valueOf(response.getHeader().getName());
         System.out.println(name);
+        System.out.println(Commands.LOG_IN.equals(name));
         switch (name) {
             case LOG_IN: {
+                System.out.println("riba");
+                Platform.setImplicitExit(false);
                 Platform.runLater(() -> {
+                    System.out.println("riba2");
                     try {
                         Parent root = FXMLLoader.load(ResponseHandler.class.getResource("/Main.fxml"));
+                        Connector.setStage(new Stage());
                         Stage stage = Connector.getStage();
                         stage.setScene(new Scene(root));
                         stage.show();
                         Utils.setStage(stage);
+                        System.out.println(name + " 2");
                     } catch (IOException e) {
+                        System.out.println("riba3");
                         throw new IllegalArgumentException(e);
                     }
                 });
+                break;
+            }
+            case UNSUCCESSFUL: {
+                Platform.runLater(() -> {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Error");
+                    alert.setContentText("Wrong data!");
+                    alert.showAndWait();
+                });
+                break;
             }
             case REGISTER: {
                 Platform.runLater(() -> {
                     try {
                         Parent root = FXMLLoader.load(ResponseHandler.class.getResource("/Main.fxml"));
+                        Connector.setStage(new Stage());
                         Stage stage = Connector.getStage();
                         stage.setScene(new Scene(root));
                     } catch (IOException e) {
                         throw new IllegalArgumentException(e);
                     }
                 });
+                break;
             }
             case PROFILE: {
                 Platform.runLater(() -> {
@@ -67,21 +88,25 @@ public class ResponseHandler {
                         throw new IllegalArgumentException(e);
                     }
                 });
+                break;
             }
             case GET_CARD_LIST: {
                 Platform.runLater(() -> {
                     List<Object> cards = (List<Object>) map.get("cards");
-                    for(Object cardObject: cards) {
-                        LinkedHashMap<String, Object> cardMap = (LinkedHashMap<String, Object>)cardObject;
+                    for (Object cardObject : cards) {
+                        LinkedHashMap<String, Object> cardMap = (LinkedHashMap<String, Object>) cardObject;
                         Card card = new Card();
-                        card.setName((String)cardMap.get("name"));
-                        card.setPower((String)cardMap.get("power"));
-                        card.setDif((String)cardMap.get("dif"));
+                        card.setName((String) cardMap.get("name"));
+                        card.setPower((String) cardMap.get("power"));
+                        card.setDif((String) cardMap.get("dif"));
                     }
                 });
+                break;
             }
+
         }
     }
+}
     //здесь я должна динамически рисовать карту, но идет туго
 //    private static void makeCard(Card card){
 //        Pane pane = new Pane();
@@ -91,4 +116,4 @@ public class ResponseHandler {
 //        pane.getChildren().add(Text dif);
 //
 //    }
-}
+
