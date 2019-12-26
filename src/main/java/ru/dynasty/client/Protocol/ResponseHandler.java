@@ -60,9 +60,7 @@ public class ResponseHandler {
             }
             case REGISTER: {
                 Platform.setImplicitExit(false);
-                System.out.println("riba");
                 Platform.runLater(() -> {
-                    System.out.println("riba2");
                     try {
                         Parent root = FXMLLoader.load(ResponseHandler.class.getResource("/Main.fxml"));
                         Connector.setStage(new Stage());
@@ -70,20 +68,22 @@ public class ResponseHandler {
                         stage.setScene(new Scene(root));
                         stage.show();
                         Utils.setStage(stage);
-                        System.out.println(name + " 2");
                     } catch (IOException e) {
-                        System.out.println("riba3");
                         throw new IllegalArgumentException(e);
                     }
                 });
                 break;
             }
             case PROFILE: {
+                Platform.setImplicitExit(false);
                 Platform.runLater(() -> {
                     try {
                         Parent root = FXMLLoader.load(ResponseHandler.class.getResource("/Profile.fxml"));
+                        Connector.setStage(new Stage());
                         Stage stage = Connector.getStage();
                         stage.setScene(new Scene(root));
+                        stage.show();
+                        Utils.setStage(stage);
                         ((Label) stage.getScene().lookup("#name")).setText((String) map.get("name"));
                         ((Label) stage.getScene().lookup("#victories")).setText((String) map.get("victories"));
                         ((Label) stage.getScene().lookup("#defeats")).setText((String) map.get("defeats"));
@@ -94,6 +94,7 @@ public class ResponseHandler {
                 break;
             }
             case GET_CARD_LIST: {
+                Platform.setImplicitExit(false);
                 Platform.runLater(() -> {
                     List<Object> cards = (List<Object>) map.get("cards");
                     for (Object cardObject : cards) {
@@ -108,15 +109,21 @@ public class ResponseHandler {
                 });
             }
             case GET_GAME_INFO: {
+                Platform.setImplicitExit(false);
                 Platform.runLater(() -> {
                     try {
                         Parent root = FXMLLoader.load(ResponseHandler.class.getResource("/Room.fxml"));
+                        Connector.setStage(new Stage());
                         Stage stage = Connector.getStage();
                         stage.setScene(new Scene(root));
+                        stage.show();
+                        Utils.setStage(stage);
                         ((Label) stage.getScene().lookup("#name")).setText((String) map.get("name"));
                         ((Label) stage.getScene().lookup("#damage")).setText((String) map.get("damage"));
                         String health = (String) map.get("health");
                         String enemyHealth = (String) map.get("enemyHealth");
+                        setHealth(health, (ImageView) stage.getScene().lookup("#myHealth"));
+                        setHealth(enemyHealth, (ImageView) stage.getScene().lookup("#enemyHealth"));
                     } catch (IOException e) {
                         throw new IllegalArgumentException(e);
                     }

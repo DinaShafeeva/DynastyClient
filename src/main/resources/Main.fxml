@@ -28,7 +28,7 @@
          <children>
             <MenuButton alignment="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="104.0" style="-fx-background-color: #0f1b45;" text="Info" textFill="#fffefe">
               <items>
-                  <MenuItem mnemonicParsing="false" onAction="#onClickProfile" style="-fx-background: #0f1b45;" text="Profile" />
+                  <MenuItem fx:id="profile" mnemonicParsing="false" onAction="#onClickProfile" style="-fx-background: #0f1b45;" text="Profile" />
                 <MenuItem mnemonicParsing="false" onAction="#onClickRools" text="Rools" />
                 <MenuItem mnemonicParsing="false" onAction="#onClickCards" text="All cards" />
               </items>
