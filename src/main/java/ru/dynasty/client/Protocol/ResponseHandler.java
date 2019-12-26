@@ -14,6 +14,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import ru.dynasty.client.Connector;
 import ru.dynasty.client.Models.Card;
+import ru.dynasty.client.Utils;
 
 import java.io.IOException;
 import java.util.LinkedHashMap;
@@ -27,6 +28,7 @@ public class ResponseHandler {
         Response response = objectMapper.readValue(message, Response.class);
         LinkedHashMap<String, Object> map = (LinkedHashMap<String, Object>) response.getData();
         Commands name = Commands.valueOf(response.getHeader().getName());
+        System.out.println(name);
         switch (name) {
             case LOG_IN: {
                 Platform.runLater(() -> {
@@ -34,6 +36,8 @@ public class ResponseHandler {
                         Parent root = FXMLLoader.load(ResponseHandler.class.getResource("/Main.fxml"));
                         Stage stage = Connector.getStage();
                         stage.setScene(new Scene(root));
+                        stage.show();
+                        Utils.setStage(stage);
                     } catch (IOException e) {
                         throw new IllegalArgumentException(e);
                     }
