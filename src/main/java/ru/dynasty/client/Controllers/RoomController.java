@@ -11,10 +11,15 @@ import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import ru.dynasty.client.ClientSocket;
+import ru.dynasty.client.Connector;
 import ru.dynasty.client.Models.Card;
 import ru.dynasty.client.Models.CardPane;
+import ru.dynasty.client.Protocol.Commands;
+import ru.dynasty.client.RequestCreator;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class RoomController {
     @FXML
@@ -46,11 +51,11 @@ public class RoomController {
         stage.showAndWait();
     }
 
-
     @FXML
     public void onClickSend(ActionEvent actionEvent) throws IOException {
-        String s = oneMessage.getText();
-        clientSocket.sendMessage(yourName.getText() + ": " + s);
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("message", yourName.getText() + ": " + oneMessage.getText());
+        Connector.getClientSocket().sendJsonMessage(RequestCreator.request(Commands.SEND_MESSAGE.name(), map));
     }
 
 }
